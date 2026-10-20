@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pd-model"
+version = "0.1.0"
+description = "Reproducible credit default prediction pipeline"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy>=1.26,<3", "pandas>=2.2,<3", "scipy>=1.14,<2",
+  "scikit-learn>=1.6,<2", "matplotlib>=3.9,<4", "seaborn>=0.13,<1",
+  "great-expectations>=1.8,<2", "mlflow>=3.7,<4", "dvc>=3.64,<4",
+  "fastapi>=0.115,<1", "pydantic>=2.10,<3", "uvicorn>=0.34,<1",
+  "joblib>=1.4,<2", "httpx>=0.28,<1", "PyYAML>=6,<7",
+  "pytest>=8,<10", "black>=25,<27", "flake8>=7,<8",
+  "nbformat>=5.10,<6", "nbclient>=0.10,<1", "nbconvert>=7,<8",
+  "ipykernel>=6.29,<8", "pip-tools>=7.4,<8", "python-pptx>=1.0,<2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

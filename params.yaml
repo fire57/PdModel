@@ -1,0 +1,32 @@
+data:
+  raw: data/raw/UCI_Credit_Card.csv
+  processed: data/processed
+  target: default.payment.next.month
+  source_sha256: a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1
+split:
+  seed: 42
+  folds: 5
+  test_fold: 0
+training:
+  seed: 42
+  cv_folds: 5
+  n_jobs: 2
+  threshold: 0.5
+  experiments: config/experiments.yaml
+  models: models
+  smoke_rows: 1500
+tracking:
+  experiment: Credit_Default_Prediction
+  uri: sqlite:///mlflow.db
+  artifacts: mlartifacts
+evaluation:
+  figures: reports/figures/evaluation
+  metrics: reports/metrics/test_metrics.json
+monitoring:
+  reference:
+    bins: 10
+    epsilon: 0.000001
+  batch_size: 1000
+  warning: 0.10
+  alert: 0.25
+  shift_factor: 0.05

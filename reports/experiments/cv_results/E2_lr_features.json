@@ -1,0 +1,22 @@
+{
+  "id": "E2_lr_features",
+  "algorithm": "logistic",
+  "aggregates": true,
+  "search": "grid",
+  "params": {
+    "max_iter": 1500,
+    "solver": "lbfgs"
+  },
+  "space": {
+    "classifier__C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "classifier__class_weight": [
+      null,
+      "balanced"
+    ]
+  }
+}

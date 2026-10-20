@@ -1,0 +1,76 @@
+stages:
+  prepare:
+    cmd: python -m pd_model.data.prepare --config params.yaml
+    deps:
+      - data/raw/UCI_Credit_Card.csv
+      - data/expectations/raw.json
+      - data/expectations/processed.json
+      - src/pd_model/config.py
+      - src/pd_model/data/prepare.py
+      - src/pd_model/data/validation.py
+      - src/pd_model/features/build_features.py
+      - requirements.txt
+    params:
+      - data
+      - split
+    outs:
+      - data/processed
+      - reports/validation/prepare.json:
+          cache: false
+  train:
+    cmd: python -m pd_model.models.train --config params.yaml --profile full
+    deps:
+      - data/processed/train.csv
+      - data/expectations/processed.json
+      - src/pd_model/config.py
+      - src/pd_model/data/validation.py
+      - src/pd_model/features/build_features.py
+      - src/pd_model/models/pipeline.py
+      - src/pd_model/models/predict.py
+      - src/pd_model/models/train.py
+      - src/pd_model/monitoring/psi.py
+      - src/pd_model/monitoring/reference.py
+      - src/pd_model/tracking/mlflow_utils.py
+      - config/experiments.yaml
+      - requirements.txt
+    params:
+      - data
+      - training
+      - tracking
+      - monitoring.reference
+    outs:
+      - models
+      - reports/experiments/cv_results:
+          cache: false
+      - reports/experiments/leaderboard.csv:
+          cache: false
+    metrics:
+      - reports/metrics/cv_metrics.json:
+          cache: false
+  evaluate:
+    cmd: python -m pd_model.models.evaluate --config params.yaml
+    deps:
+      - data/processed/test.csv
+      - data/expectations/processed.json
+      - models
+      - src/pd_model/config.py
+      - src/pd_model/data/validation.py
+      - src/pd_model/features/build_features.py
+      - src/pd_model/models/predict.py
+      - src/pd_model/models/metrics.py
+      - src/pd_model/models/evaluate.py
+      - src/pd_model/tracking/mlflow_utils.py
+      - requirements.txt
+    params:
+      - data
+      - training.models
+      - evaluation
+      - tracking
+    outs:
+      - reports/figures/evaluation:
+          cache: false
+      - reports/experiments/test_comparison.csv:
+          cache: false
+    metrics:
+      - reports/metrics/test_metrics.json:
+          cache: false

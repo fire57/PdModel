@@ -1,0 +1,9 @@
+{
+  "id": "E0_dummy",
+  "algorithm": "dummy",
+  "aggregates": false,
+  "search": "none",
+  "params": {
+    "strategy": "prior"
+  }
+}

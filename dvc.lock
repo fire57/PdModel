@@ -1,0 +1,234 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python -m pd_model.data.prepare --config params.yaml
+    deps:
+    - path: data/expectations/processed.json
+      hash: md5
+      md5: 1bacd1601a68f82e6f6d57150a415f89
+      size: 14933
+    - path: data/expectations/raw.json
+      hash: md5
+      md5: 6df2669f8b6dfdcf40338d4f7dec0f00
+      size: 14759
+    - path: data/raw/UCI_Credit_Card.csv
+      hash: md5
+      md5: 940b416bb13a9b24bb5c9e1589284005
+      size: 2862995
+    - path: requirements.txt
+      hash: md5
+      md5: 2bd63fce27d248fb90ce184df2376330
+      size: 3817
+    - path: src/pd_model/config.py
+      hash: md5
+      md5: ee0f0d6e1641bf5f857572b007e6439b
+      size: 2016
+    - path: src/pd_model/data/prepare.py
+      hash: md5
+      md5: a34b02a3d0040dd002f997bae2e65b74
+      size: 3096
+    - path: src/pd_model/data/validation.py
+      hash: md5
+      md5: c94015bfc333dee60042d992d995e8f2
+      size: 5467
+    - path: src/pd_model/features/build_features.py
+      hash: md5
+      md5: c4cdc4b09d0838c358e1d4e391c99f88
+      size: 3715
+    params:
+      params.yaml:
+        data:
+          raw: data/raw/UCI_Credit_Card.csv
+          processed: data/processed
+          target: default.payment.next.month
+          source_sha256: 
+            a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1
+        split:
+          seed: 42
+          folds: 5
+          test_fold: 0
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: e3f15ac8ad23c9e056483f7e4679fc0a.dir
+      size: 5916798
+      nfiles: 3
+    - path: reports/validation/prepare.json
+      hash: md5
+      md5: c90cae0541f22c789e33165b36182cf2
+      size: 219615
+  train:
+    cmd: python -m pd_model.models.train --config params.yaml --profile full
+    deps:
+    - path: config/experiments.yaml
+      hash: md5
+      md5: 388bd4f2fe4ac7514412bfc47528caec
+      size: 1359
+    - path: data/expectations/processed.json
+      hash: md5
+      md5: 1bacd1601a68f82e6f6d57150a415f89
+      size: 14933
+    - path: data/processed/train.csv
+      hash: md5
+      md5: a15d95468eea101431960a41474dc872
+      size: 4478248
+    - path: requirements.txt
+      hash: md5
+      md5: 2bd63fce27d248fb90ce184df2376330
+      size: 3817
+    - path: src/pd_model/config.py
+      hash: md5
+      md5: ee0f0d6e1641bf5f857572b007e6439b
+      size: 2016
+    - path: src/pd_model/data/validation.py
+      hash: md5
+      md5: c94015bfc333dee60042d992d995e8f2
+      size: 5467
+    - path: src/pd_model/features/build_features.py
+      hash: md5
+      md5: c4cdc4b09d0838c358e1d4e391c99f88
+      size: 3715
+    - path: src/pd_model/models/pipeline.py
+      hash: md5
+      md5: 4e89a1007ea473e077fe7ee89a7dedc4
+      size: 2257
+    - path: src/pd_model/models/predict.py
+      hash: md5
+      md5: c559c97428b2279ff006695c757c19b5
+      size: 2590
+    - path: src/pd_model/models/train.py
+      hash: md5
+      md5: d9aa48485317416547d3b2870d19e1e1
+      size: 11087
+    - path: src/pd_model/monitoring/psi.py
+      hash: md5
+      md5: 22a32911a19d8089897c901d9e54ce87
+      size: 2718
+    - path: src/pd_model/monitoring/reference.py
+      hash: md5
+      md5: e98de9386991492b93380cc639fd9308
+      size: 1153
+    - path: src/pd_model/tracking/mlflow_utils.py
+      hash: md5
+      md5: 3da65f6a29a4cbde0caa85e829aebf53
+      size: 1812
+    params:
+      params.yaml:
+        data:
+          raw: data/raw/UCI_Credit_Card.csv
+          processed: data/processed
+          target: default.payment.next.month
+          source_sha256: 
+            a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1
+        monitoring.reference:
+          bins: 10
+          epsilon: 1e-06
+        tracking:
+          experiment: Credit_Default_Prediction
+          uri: sqlite:///mlflow.db
+          artifacts: mlartifacts
+        training:
+          seed: 42
+          cv_folds: 5
+          n_jobs: 2
+          threshold: 0.5
+          experiments: config/experiments.yaml
+          models: models
+          smoke_rows: 1500
+    outs:
+    - path: models
+      hash: md5
+      md5: 2a8c6c99de5ae900ddbc4c0d9bdeb454.dir
+      size: 5600657
+      nfiles: 15
+    - path: reports/experiments/cv_results
+      hash: md5
+      md5: 8101c421829c895e91e73ef92f8a93c6.dir
+      size: 56261
+      nfiles: 12
+    - path: reports/experiments/leaderboard.csv
+      hash: md5
+      md5: 9b4af67cbd0c03393e6ce758c6bc28b1
+      size: 1364
+    - path: reports/metrics/cv_metrics.json
+      hash: md5
+      md5: 2271f94a116f92d7bcf4de2d63576712
+      size: 2972
+  evaluate:
+    cmd: python -m pd_model.models.evaluate --config params.yaml
+    deps:
+    - path: data/expectations/processed.json
+      hash: md5
+      md5: 1bacd1601a68f82e6f6d57150a415f89
+      size: 14933
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 609b1837df8cc7ac2552eec725921137
+      size: 1119205
+    - path: models
+      hash: md5
+      md5: 2a8c6c99de5ae900ddbc4c0d9bdeb454.dir
+      size: 5600657
+      nfiles: 15
+    - path: requirements.txt
+      hash: md5
+      md5: 2bd63fce27d248fb90ce184df2376330
+      size: 3817
+    - path: src/pd_model/config.py
+      hash: md5
+      md5: ee0f0d6e1641bf5f857572b007e6439b
+      size: 2016
+    - path: src/pd_model/data/validation.py
+      hash: md5
+      md5: c94015bfc333dee60042d992d995e8f2
+      size: 5467
+    - path: src/pd_model/features/build_features.py
+      hash: md5
+      md5: c4cdc4b09d0838c358e1d4e391c99f88
+      size: 3715
+    - path: src/pd_model/models/evaluate.py
+      hash: md5
+      md5: 750dd2e538ba750a907d774a42a2b4b0
+      size: 5318
+    - path: src/pd_model/models/metrics.py
+      hash: md5
+      md5: 0589f163bf98f7b961515be6e2384424
+      size: 1653
+    - path: src/pd_model/models/predict.py
+      hash: md5
+      md5: c559c97428b2279ff006695c757c19b5
+      size: 2590
+    - path: src/pd_model/tracking/mlflow_utils.py
+      hash: md5
+      md5: 3da65f6a29a4cbde0caa85e829aebf53
+      size: 1812
+    params:
+      params.yaml:
+        data:
+          raw: data/raw/UCI_Credit_Card.csv
+          processed: data/processed
+          target: default.payment.next.month
+          source_sha256: 
+            a0f0ab49d6326671d6cd83be5c88dcf18007025fe9a53ecd699119c871176ca1
+        evaluation:
+          figures: reports/figures/evaluation
+          metrics: reports/metrics/test_metrics.json
+        tracking:
+          experiment: Credit_Default_Prediction
+          uri: sqlite:///mlflow.db
+          artifacts: mlartifacts
+        training.models: models
+    outs:
+    - path: reports/experiments/test_comparison.csv
+      hash: md5
+      md5: 12d1d46ac0beca75cd3e3be30d4eb551
+      size: 978
+    - path: reports/figures/evaluation
+      hash: md5
+      md5: bb90c6fa0c0054480eafe3364b83b66a.dir
+      size: 438257
+      nfiles: 9
+    - path: reports/metrics/test_metrics.json
+      hash: md5
+      md5: d32f8f9e2fe5a26b4cf9d8ff7049735f
+      size: 557

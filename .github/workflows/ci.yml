@@ -1,0 +1,59 @@
+name: PD model CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality-and-data:
+    runs-on: ubuntu-latest
+    env:
+      MPLBACKEND: Agg
+      MLFLOW_TRACKING_URI: sqlite:///ci-mlflow.db
+      PD_MODEL_DVC_ARCHIVE_URL: ${{ vars.PD_MODEL_DVC_ARCHIVE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install locked environment
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install --no-deps -e .
+          python -m pip check
+      - name: Black and flake8
+        run: |
+          python -m black --check src tests scripts
+          python -m flake8 src tests scripts
+      - name: Unit and integration tests
+        run: python -m pytest --junitxml=reports/evidence/pytest.xml
+      - name: Restore DVC dataset and production model
+        run: python scripts/bootstrap_dvc_remote.py
+      - name: Great Expectations validation of real input dataset
+        run: python -m pd_model.data.validation --data data/raw/UCI_Credit_Card.csv --suite raw --report reports/validation/ci_raw.json
+      - name: Small training smoke (separate artifacts)
+        run: python -m pd_model.models.train --profile smoke
+      - name: Real API smoke on restored champion
+        run: |
+          python -m uvicorn pd_model.api.app:app --host 127.0.0.1 --port 8000 > /tmp/pd-api.log 2>&1 &
+          api_pid=$!
+          trap 'kill "$api_pid"' EXIT
+          python scripts/smoke_api.py --url http://127.0.0.1:8000 --output reports/evidence/ci_api_smoke.json
+      - name: Upload verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pd-model-ci-evidence
+          include-hidden-files: true
+          path: |
+            reports/validation/ci_raw.json
+            reports/evidence/pytest.xml
+            reports/evidence/ci_api_smoke.json
+            .ci_artifacts/reports
+          if-no-files-found: warn

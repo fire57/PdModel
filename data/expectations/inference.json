@@ -1,0 +1,737 @@
+{
+  "name": "credit_inference_credit-v1",
+  "schema_version": "credit-v1",
+  "columns": [
+    "LIMIT_BAL",
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE",
+    "PAY_0",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6"
+  ],
+  "expectations": [
+    {
+      "type": "ExpectTableColumnsToMatchSet",
+      "kwargs": {
+        "column_set": [
+          "LIMIT_BAL",
+          "SEX",
+          "EDUCATION",
+          "MARRIAGE",
+          "AGE",
+          "PAY_0",
+          "PAY_2",
+          "PAY_3",
+          "PAY_4",
+          "PAY_5",
+          "PAY_6",
+          "BILL_AMT1",
+          "BILL_AMT2",
+          "BILL_AMT3",
+          "BILL_AMT4",
+          "BILL_AMT5",
+          "BILL_AMT6",
+          "PAY_AMT1",
+          "PAY_AMT2",
+          "PAY_AMT3",
+          "PAY_AMT4",
+          "PAY_AMT5",
+          "PAY_AMT6"
+        ],
+        "exact_match": true
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "LIMIT_BAL"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "LIMIT_BAL",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "SEX"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "SEX",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "EDUCATION"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "EDUCATION",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "MARRIAGE"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "MARRIAGE",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "AGE"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "AGE",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_0"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_0",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_2"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_2",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_3"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_3",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_4"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_4",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_5"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_5",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_6"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_6",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT1"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT1",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT2"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT2",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT3"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT3",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT4"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT4",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT5"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT5",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "BILL_AMT6"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "BILL_AMT6",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT1"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT1",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT2"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT2",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT3"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT3",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT4"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT4",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT5"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT5",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToNotBeNull",
+      "kwargs": {
+        "column": "PAY_AMT6"
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInTypeList",
+      "kwargs": {
+        "column": "PAY_AMT6",
+        "type_list": [
+          "int64",
+          "int32",
+          "int",
+          "float64",
+          "float32",
+          "float"
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "LIMIT_BAL",
+        "min_value": 0,
+        "strict_min": true
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "AGE",
+        "min_value": 18,
+        "max_value": 100
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "SEX",
+        "value_set": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "EDUCATION",
+        "value_set": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "MARRIAGE",
+        "value_set": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_0",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_2",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_3",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_4",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_5",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeInSet",
+      "kwargs": {
+        "column": "PAY_6",
+        "value_set": [
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT1",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT2",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT3",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT4",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT5",
+        "min_value": 0
+      }
+    },
+    {
+      "type": "ExpectColumnValuesToBeBetween",
+      "kwargs": {
+        "column": "PAY_AMT6",
+        "min_value": 0
+      }
+    }
+  ]
+}

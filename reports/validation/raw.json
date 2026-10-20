@@ -1,0 +1,2444 @@
+{
+  "suite": "credit_raw_credit-v1",
+  "schema_version": "credit-v1",
+  "rows": 30000,
+  "preflight": [
+    {
+      "name": "nonempty_batch",
+      "success": true
+    },
+    {
+      "name": "exact_columns",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT4:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_5:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_5:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT2:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_2:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_2:integer_values",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT2:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT3:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "AGE:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "AGE:integer_values",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT1:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT4:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "LIMIT_BAL:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT5:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "ID:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "ID:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_3:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_3:integer_values",
+      "success": true
+    },
+    {
+      "name": "MARRIAGE:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "MARRIAGE:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_4:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_4:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_0:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_0:integer_values",
+      "success": true
+    },
+    {
+      "name": "default.payment.next.month:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "default.payment.next.month:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT1:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "EDUCATION:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "EDUCATION:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_6:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_6:integer_values",
+      "success": true
+    },
+    {
+      "name": "BILL_AMT6:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT5:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "SEX:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "SEX:integer_values",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT3:finite_numeric",
+      "success": true
+    },
+    {
+      "name": "PAY_AMT6:finite_numeric",
+      "success": true
+    }
+  ],
+  "gx": {
+    "success": true,
+    "results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_table_columns_to_match_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column_set": [
+              "ID",
+              "LIMIT_BAL",
+              "SEX",
+              "EDUCATION",
+              "MARRIAGE",
+              "AGE",
+              "PAY_0",
+              "PAY_2",
+              "PAY_3",
+              "PAY_4",
+              "PAY_5",
+              "PAY_6",
+              "BILL_AMT1",
+              "BILL_AMT2",
+              "BILL_AMT3",
+              "BILL_AMT4",
+              "BILL_AMT5",
+              "BILL_AMT6",
+              "PAY_AMT1",
+              "PAY_AMT2",
+              "PAY_AMT3",
+              "PAY_AMT4",
+              "PAY_AMT5",
+              "PAY_AMT6",
+              "default.payment.next.month"
+            ]
+          },
+          "meta": {},
+          "id": "7f11edb9-e235-417b-883b-adfa5caf3ca8",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": [
+            "AGE",
+            "BILL_AMT1",
+            "BILL_AMT2",
+            "BILL_AMT3",
+            "BILL_AMT4",
+            "BILL_AMT5",
+            "BILL_AMT6",
+            "EDUCATION",
+            "ID",
+            "LIMIT_BAL",
+            "MARRIAGE",
+            "PAY_0",
+            "PAY_2",
+            "PAY_3",
+            "PAY_4",
+            "PAY_5",
+            "PAY_6",
+            "PAY_AMT1",
+            "PAY_AMT2",
+            "PAY_AMT3",
+            "PAY_AMT4",
+            "PAY_AMT5",
+            "PAY_AMT6",
+            "SEX",
+            "default.payment.next.month"
+          ]
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "ID"
+          },
+          "meta": {},
+          "id": "b1fa71b1-fded-461f-9953-726d88b481e1",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "ID",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "6ba090c3-6da3-4b95-a093-3e823b11ae7d",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "ID"
+          },
+          "meta": {},
+          "id": "82fe8aeb-282a-4aef-894f-55187e45ff0c",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "ID",
+            "min_value": 0.0,
+            "strict_min": true
+          },
+          "meta": {},
+          "id": "67c912e8-75c5-4baf-854c-0b0a5e11268e",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "LIMIT_BAL"
+          },
+          "meta": {},
+          "id": "da1d0d2e-7832-4dce-977e-f4c8d3e1b52b",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "LIMIT_BAL",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "5aed41ea-f922-4570-89b8-cd181aaaf3ec",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "LIMIT_BAL",
+            "min_value": 0.0,
+            "strict_min": true
+          },
+          "meta": {},
+          "id": "7c00f68d-4d71-44cb-9c1f-9cc0e29b05a8",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "SEX"
+          },
+          "meta": {},
+          "id": "0e8c7fb7-4bd1-4e2d-80e3-7f3c82d1f71b",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "SEX",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "fae9ffca-4f0f-4261-b509-f3f5b873e21f",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "SEX",
+            "value_set": [
+              1,
+              2
+            ]
+          },
+          "meta": {},
+          "id": "3584bd4f-144b-4920-a2c6-83c23c903316",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "EDUCATION"
+          },
+          "meta": {},
+          "id": "c1223ba0-aab6-410d-9a0f-f7ca3c530647",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "EDUCATION",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "261c61de-ee7c-4a86-aaf6-8261e7180969",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "EDUCATION",
+            "value_set": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          },
+          "meta": {},
+          "id": "e7810281-d081-41bb-812d-401797023206",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "MARRIAGE"
+          },
+          "meta": {},
+          "id": "07330f78-e524-47b6-8fe0-38b6b6bba739",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "MARRIAGE",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "62a640b0-819a-4663-9c62-12cb57136a45",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "MARRIAGE",
+            "value_set": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "meta": {},
+          "id": "1990feec-c656-4b55-971a-947c91572b6c",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "AGE"
+          },
+          "meta": {},
+          "id": "561e937d-6687-492a-ab9c-54d1760bf33a",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "AGE",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "ba42200f-8d4d-40b7-b2b2-e4e6cc0eb88e",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "AGE",
+            "min_value": 18.0,
+            "max_value": 100.0
+          },
+          "meta": {},
+          "id": "e854f417-d4ec-4820-8bc2-4beccb3d7d87",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_0"
+          },
+          "meta": {},
+          "id": "1e1846fc-45c6-4d28-bc06-47bfe6fadfce",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_0",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "0ca86959-ea89-4e9f-a84a-9e657f2490f3",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_0",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "814cb397-09f4-43f1-8bdb-51c432012868",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_2"
+          },
+          "meta": {},
+          "id": "ad60ee1d-4d0d-4fde-99cd-2f5bb63c452f",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_2",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "059d0e5c-8ac0-4922-9ff5-9fa6b1da2527",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_2",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "39a5f023-0e33-4f0f-8d4e-f99c6bdc9697",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_3"
+          },
+          "meta": {},
+          "id": "6132abf8-a9a7-44b6-96e1-1f5dad237cd1",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_3",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "dcf65e81-d8e5-4f61-920c-0f0dba3ac64c",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_3",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "78244720-8378-4d53-82c9-556609319f22",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_4"
+          },
+          "meta": {},
+          "id": "78f2fc94-75c4-44df-abb3-76744d2dfb03",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_4",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "ce344285-a1c9-4b9e-9221-7493b7596250",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_4",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "84b9bffc-996f-42b3-85c5-21e4bbd27dc3",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_5"
+          },
+          "meta": {},
+          "id": "db61a694-f7f9-42b1-ac5e-d48d08ddd5b9",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_5",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "f63ea603-11b2-465f-a4cc-9051621cf456",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_5",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "52ddaf6b-f413-4519-bc4c-4ba055d4a763",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_6"
+          },
+          "meta": {},
+          "id": "172f67a9-f155-410e-aaaf-975012b8faf2",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_6",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "9dd83872-31ca-4062-b2c2-e50d1cf4b4e5",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_6",
+            "value_set": [
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          },
+          "meta": {},
+          "id": "e43264b8-efbc-4f48-be05-499f378b04bc",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT1"
+          },
+          "meta": {},
+          "id": "286a7123-c864-43c2-908c-21e89c4a1d97",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT1",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "25516b74-59f4-4186-91fd-ff8596449b57",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT2"
+          },
+          "meta": {},
+          "id": "30043c3c-5538-4883-8fa0-3b9a83353c85",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT2",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "ab84a157-31e7-4881-b64c-2ea1f2bf28bf",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT3"
+          },
+          "meta": {},
+          "id": "3f5969a3-5983-4e95-ace9-8b1f47464a42",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT3",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "f4181335-ab51-4d6d-84a7-e5fc6433fa6e",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT4"
+          },
+          "meta": {},
+          "id": "7b3f6bec-78b5-403c-9bde-070e76d776fc",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT4",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "659e6c41-da67-4bf3-8ecb-3b43499945e6",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT5"
+          },
+          "meta": {},
+          "id": "2a3d1694-c564-4fb1-a4eb-296ee6f5e41e",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT5",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "ed1d7a2f-67c4-4349-b363-6449d0ddff05",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT6"
+          },
+          "meta": {},
+          "id": "f0dfe788-6ce5-4a21-8f1c-1543d1c30192",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "BILL_AMT6",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "b4fb7627-7a8a-4f70-94ff-2797ef671550",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT1"
+          },
+          "meta": {},
+          "id": "fe254f43-14d3-4381-9462-cd110733a0fc",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT1",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "17afae6a-17ce-43c6-b532-40fbcc13d7c3",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT1",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "37565310-c684-436b-ae5b-a3678a585911",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT2"
+          },
+          "meta": {},
+          "id": "45913d22-83a0-4f4a-9aaf-bfc283d005e4",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT2",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "05f45dde-1f00-4eeb-bac7-aac018f9642d",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT2",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "0257639e-b500-44f6-b8f3-7c1bb8f5dfed",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT3"
+          },
+          "meta": {},
+          "id": "bd917667-f2f2-42bd-8471-ec2caa1bd4b7",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT3",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "7d6fb375-8b31-482d-b090-397303a5bef2",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT3",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "d563e019-5957-460a-b9eb-2def8480bbdf",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT4"
+          },
+          "meta": {},
+          "id": "68358598-4bd0-4b84-bfba-0d0ae31e2240",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT4",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "c78646bd-c5a8-419f-ac3a-4840f807e87c",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT4",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "243a43bf-7fda-4d0b-87e8-69c811900cd3",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT5"
+          },
+          "meta": {},
+          "id": "3f00e065-3a25-45d8-ac2e-642298d340f9",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT5",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "c405b9c1-9582-4b68-87e3-e290c50261c4",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT5",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "ea357cad-2733-4681-b77a-fcf691d089d5",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT6"
+          },
+          "meta": {},
+          "id": "1322c1a5-682e-4a2e-a318-b037980405e7",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT6",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "bfca2bf9-c717-47ae-90ac-2f2394028822",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "float64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "PAY_AMT6",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "id": "b4452ce3-eb47-45d8-818d-ae069845e593",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "default.payment.next.month"
+          },
+          "meta": {},
+          "id": "5bfffb12-1cee-479f-8baf-ba674b2fb30b",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_type_list",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "default.payment.next.month",
+            "type_list": [
+              "int64",
+              "int32",
+              "int",
+              "float64",
+              "float32",
+              "float"
+            ]
+          },
+          "meta": {},
+          "id": "e45ae615-97c1-498b-8d70-e3ad1fa95c28",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": "int64"
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "credit_dataframe-credit",
+            "column": "default.payment.next.month",
+            "value_set": [
+              0,
+              1
+            ]
+          },
+          "meta": {},
+          "id": "8768587e-fd1e-4add-a8db-2df904f02d76",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 30000,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ],
+    "suite_name": "credit_raw_credit-v1",
+    "suite_parameters": {},
+    "statistics": {
+      "evaluated_expectations": 71,
+      "successful_expectations": 71,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "meta": {
+      "great_expectations_version": "1.24.0",
+      "batch_spec": {
+        "batch_data": "PandasDataFrame"
+      },
+      "batch_markers": {
+        "ge_load_time": "20261018T225607.160853Z",
+        "pandas_data_fingerprint": "afe5c415a15c571fef10348ec8f30bb2"
+      },
+      "active_batch_definition": {
+        "datasource_name": "credit_dataframe",
+        "data_connector_name": "fluent",
+        "data_asset_name": "credit",
+        "batch_identifiers": {
+          "dataframe": "<DATAFRAME>"
+        }
+      },
+      "validation_id": "bfca4e9b-97dc-4ff2-a219-5ea3950c369d",
+      "checkpoint_id": null,
+      "run_id": {
+        "run_name": null,
+        "run_time": "2026-10-19T01:56:07.332040+03:00"
+      },
+      "validation_time": "2026-10-18T22:56:07.332040+00:00",
+      "batch_parameters": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "id": null
+  },
+  "success": true
+}

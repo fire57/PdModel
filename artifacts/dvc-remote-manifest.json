@@ -1,0 +1,8 @@
+{
+  "file": "dvc-remote.tar.gz",
+  "sha256": "4ecbea692eb086522f2ea703f8a4e4bd5e7569667eb66b542d843667ff6aa9d4",
+  "bytes": 5151333,
+  "layout": "remote/files/md5",
+  "source_remote": ".dvc_remote",
+  "download_url_variable": "PD_MODEL_DVC_ARCHIVE_URL"
+}

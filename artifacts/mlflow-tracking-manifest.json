@@ -1,0 +1,7 @@
+{
+  "file": "mlflow-tracking.tar.gz",
+  "sha256": "1b7b72bddffd655f13f2f9be146a1573f8a267c75efacc03a9fdb0d694c22bfb",
+  "bytes": 4703365,
+  "source_root": "/Users/alekseikostikov/Desktop/МИФИ/Автоматизация процессов разработки и тестирования моделей машинного обучения/PdModel",
+  "backend": "SQLite backup"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "E1_lr_raw",
+  "algorithm": "logistic",
+  "aggregates": false,
+  "search": "none",
+  "params": {
+    "C": 1.0,
+    "max_iter": 1500,
+    "solver": "lbfgs"
+  }
+}

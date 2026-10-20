@@ -1,0 +1,32 @@
+{
+  "id": "E4_gb_raw",
+  "algorithm": "gradient_boosting",
+  "aggregates": false,
+  "search": "random",
+  "n_iter": 8,
+  "params": {},
+  "space": {
+    "classifier__n_estimators": [
+      50,
+      100,
+      150
+    ],
+    "classifier__learning_rate": [
+      0.03,
+      0.1
+    ],
+    "classifier__max_depth": [
+      1,
+      2,
+      3
+    ],
+    "classifier__min_samples_leaf": [
+      10,
+      30
+    ],
+    "classifier__subsample": [
+      0.8,
+      1.0
+    ]
+  }
+}

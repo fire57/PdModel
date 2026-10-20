@@ -1,0 +1,50 @@
+experiments:
+  - id: E0_dummy
+    algorithm: dummy
+    aggregates: false
+    search: none
+    params: {strategy: prior}
+  - id: E1_lr_raw
+    algorithm: logistic
+    aggregates: false
+    search: none
+    params: {C: 1.0, max_iter: 1500, solver: lbfgs}
+  - id: E2_lr_features
+    algorithm: logistic
+    aggregates: true
+    search: grid
+    params: {max_iter: 1500, solver: lbfgs}
+    space:
+      classifier__C: [0.01, 0.1, 1.0, 10.0]
+      classifier__class_weight: [null, balanced]
+  - id: E3_rf_features
+    algorithm: random_forest
+    aggregates: true
+    search: random
+    n_iter: 12
+    params: {n_jobs: 1}
+    space:
+      classifier__n_estimators: [100, 200]
+      classifier__max_depth: [6, 10, null]
+      classifier__min_samples_leaf: [5, 10, 20]
+      classifier__max_features: [sqrt, 0.5]
+      classifier__class_weight: [null, balanced]
+  - id: E4_gb_raw
+    algorithm: gradient_boosting
+    aggregates: false
+    search: random
+    n_iter: 8
+    params: {}
+    space: &gb_space
+      classifier__n_estimators: [50, 100, 150]
+      classifier__learning_rate: [0.03, 0.1]
+      classifier__max_depth: [1, 2, 3]
+      classifier__min_samples_leaf: [10, 30]
+      classifier__subsample: [0.8, 1.0]
+  - id: E5_gb_features
+    algorithm: gradient_boosting
+    aggregates: true
+    search: random
+    n_iter: 8
+    params: {}
+    space: *gb_space

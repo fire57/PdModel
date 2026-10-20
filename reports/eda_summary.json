@@ -1,0 +1,19 @@
+{
+  "rows": 30000,
+  "columns": 25,
+  "missing_cells": 0,
+  "unique_ids": true,
+  "exact_duplicates": 0,
+  "duplicates_without_id": 35,
+  "duplicates_X_raw": 56,
+  "duplicates_X_normalized": 56,
+  "normalized_groups_conflicting_targets": 21,
+  "negative_bill_cells": 3932,
+  "source_positive_rate": 0.2212,
+  "train_rows": 23999,
+  "test_rows": 6001,
+  "train_positive_rate": 0.22117588232843036,
+  "test_positive_rate": 0.22129645059156808,
+  "id_overlap": 0,
+  "group_overlap": 0
+}
